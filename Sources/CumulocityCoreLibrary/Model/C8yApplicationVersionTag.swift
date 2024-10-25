@@ -11,13 +11,13 @@ import Foundation
 public struct C8yApplicationVersionTag: Codable {
 
 	/// Tag assigned to the version. Version tags must be unique across all versions and version fields of application versions.
-	public var tag: [String]?
+	public var tags: [String]?
 
 	enum CodingKeys: String, CodingKey {
-		case tag
+		case tags
 	}
 
-	public init(tag: [String]) {
-		self.tag = tag
+	public init(tags: [String]) {
+		self.tags = tags
 	}
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct C8yMeasurement: Codable {
-	
+	 
 	public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.id = try container.decodeIfPresent(String.self, forKey: .id)

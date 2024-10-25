@@ -11,7 +11,7 @@ import Combine
 
 /// API methods to retrieve, create, update and delete applications.
 /// 
-/// ### Application names
+/// ###��Application names
 /// 
 /// For each tenant, Cumulocity IoT manages the subscribed applications and provides a number of applications of various types.In case you want to subscribe a tenant to an application using an API, you must use the application name in the argument (as name).
 /// 
@@ -55,8 +55,12 @@ public class ApplicationsApi: AdaptableApi {
 	///     The ID of a user that has access to the applications.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	///   - hasVersions:
 	///     When set to `true`, the returned result contains applications with an `applicationVersions` field that is not empty. When set to `false`, the result will contain applications with an empty `applicationVersions` field.
 	public func getApplications(currentPage: Int? = nil, name: String? = nil, owner: String? = nil, pageSize: Int? = nil, providedFor: String? = nil, subscriber: String? = nil, tenant: String? = nil, type: String? = nil, user: String? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil, hasVersions: Bool? = nil) -> AnyPublisher<C8yApplicationCollection, Error> {
@@ -105,7 +109,7 @@ public class ApplicationsApi: AdaptableApi {
 	/// * HTTP 201 An application was created.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 409 Duplicate key/name.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -247,7 +251,7 @@ public class ApplicationsApi: AdaptableApi {
 	/// 
 	/// Delete an application (by a given ID).This method is not supported by microservice applications.
 	/// 
-	/// > **ⓘ Note** With regards to a hosted application, there is a caching mechanism in place that keeps the information about the placement of application files (html, javascript, css, fonts, etc.). Removing a hosted application, in normal circumstances, will cause the subsequent requests for application files to fail with an HTTP 404 error because the application is removed synchronously, its files are immediately removed on the node serving the request and at the same time the information is propagated to other nodes – but in rare cases there might be a delay with this propagation. In such situations, the files of the removed application can be served from those nodes up until the aforementioned cache expires. For the same reason, the cache can also cause HTTP 404 errors when the application is updated as it will keep the path to the files of the old version of the application. The cache is filled on demand, so there should not be issues if application files were not accessed prior to the delete request. The expiration delay of the cache can differ, but should not take more than one minute.
+	/// > **ⓘ Note** With regards to a hosted application, there is a caching mechanism in place that keeps the information about the placement of application files (html, javascript, css, fonts, etc.). Removing a hosted application, in normal circumstances, will cause the subsequent requests for application files to fail with an HTTP 404 error because the application is removed synchronously, its files are immediately removed on the node serving the request and at the same time the information is propagated to other nodes ��� but in rare cases there might be a delay with this propagation. In such situations, the files of the removed application can be served from those nodes up until the aforementioned cache expires. For the same reason, the cache can also cause HTTP 404 errors when the application is updated as it will keep the path to the files of the old version of the application. The cache is filled on demand, so there should not be issues if application files were not accessed prior to the delete request. The expiration delay of the cache can differ, but should not take more than one minute.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_APPLICATION_MANAGEMENT_ADMIN *AND* tenant is the owner of the application 
@@ -312,7 +316,7 @@ public class ApplicationsApi: AdaptableApi {
 	/// 
 	/// * HTTP 201 An application was copied.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 422 Unprocessable Entity – method not supported
+	/// * HTTP 422 Unprocessable Entity ��� method not supported
 	/// 
 	/// - Parameters:
 	///   - id:
@@ -443,8 +447,12 @@ public class ApplicationsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getApplicationsByOwner(tenantId: String, currentPage: Int? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yApplicationCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/application/applicationsByOwner/\(tenantId)")
@@ -492,8 +500,12 @@ public class ApplicationsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getApplicationsByUser(username: String, currentPage: Int? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yApplicationCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/application/applicationsByUser/\(username)")

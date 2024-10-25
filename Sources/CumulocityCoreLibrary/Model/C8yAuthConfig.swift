@@ -70,6 +70,9 @@ public struct C8yAuthConfig: Codable {
 	/// The authentication configuration type. Note that the value is case insensitive.
 	public var type: C8yType?
 
+	/// If set to `true`, user data and the userId are retrieved using the claims from the id_token; otherwise, they are based on the access_token.
+	public var useIdToken: Bool?
+
 	/// SSO specific. Points to the field in the obtained JWT access token that should be used as the username in the Cumulocity IoT platform.
 	public var userIdConfig: C8yUserIdConfig?
 
@@ -104,6 +107,7 @@ public struct C8yAuthConfig: Codable {
 		case template
 		case tokenRequest
 		case type
+		case useIdToken
 		case userIdConfig
 		case userManagementSource
 		case visibleOnLoginPage
@@ -204,9 +208,13 @@ public struct C8yAuthConfig: Codable {
 				/// If set to `true`, dynamic access mapping is only managed for global roles, applications and inventory roles which are listed in the configuration. Others remain unchanged.
 				public var manageRolesOnlyFromAccessMapping: Bool?
 			
+				/// If set to `true`, dynamic access mapping is performed using the claims from the id_token; otherwise, it is based on the access_token.
+				public var mapFromIdToken: Bool?
+			
 				enum CodingKeys: String, CodingKey {
 					case mapRolesOnlyForNewUser
 					case manageRolesOnlyFromAccessMapping
+					case mapFromIdToken
 				}
 			
 				public init() {

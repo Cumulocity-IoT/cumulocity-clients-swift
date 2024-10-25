@@ -50,8 +50,12 @@ public class AuditsApi: AdaptableApi {
 	///     The username to search for.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getAuditRecords(application: String? = nil, currentPage: Int? = nil, dateFrom: String? = nil, dateTo: String? = nil, pageSize: Int? = nil, source: String? = nil, type: String? = nil, user: String? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yAuditRecordCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/audit/auditRecords")

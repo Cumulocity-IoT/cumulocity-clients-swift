@@ -74,6 +74,8 @@ public class DeviceStatisticsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getMonthlyDeviceStatistics(tenantId: String, date: Date, currentPage: Int? = nil, deviceId: String? = nil, pageSize: Int? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yDeviceStatisticsCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/statistics/device/\(tenantId)/monthly/\(date)")
@@ -126,6 +128,8 @@ public class DeviceStatisticsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getDailyDeviceStatistics(tenantId: String, date: Date, currentPage: Int? = nil, deviceId: String? = nil, pageSize: Int? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yDeviceStatisticsCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/statistics/device/\(tenantId)/daily/\(date)")

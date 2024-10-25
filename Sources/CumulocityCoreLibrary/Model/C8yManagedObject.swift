@@ -9,7 +9,7 @@
 import Foundation
 
 public struct C8yManagedObject: Codable {
-	
+	 
 	public init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		self.creationTime = try container.decodeIfPresent(String.self, forKey: .creationTime)

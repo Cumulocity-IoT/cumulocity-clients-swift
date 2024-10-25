@@ -47,6 +47,8 @@ public class BinariesApi: AdaptableApi {
 	///     The type of managed object to search for.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getBinaries(childAdditionId: String? = nil, childAssetId: String? = nil, childDeviceId: String? = nil, currentPage: Int? = nil, ids: [String]? = nil, owner: String? = nil, pageSize: Int? = nil, text: String? = nil, type: String? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yBinaryCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/inventory/binaries")
@@ -81,8 +83,8 @@ public class BinariesApi: AdaptableApi {
 	/// 
 	/// Uploading a file (binary) requires providing the following properties:
 	/// 
-	/// * `object` – In JSON format, it contains information about the file.
-	/// * `file` – Contains the file to be uploaded.
+	/// * `object` ��� In JSON format, it contains information about the file.
+	/// * `file` ��� Contains the file to be uploaded.
 	/// 
 	/// After the file has been uploaded, the corresponding managed object will contain the fragment `c8y_IsBinary`.
 	/// 
@@ -94,7 +96,7 @@ public class BinariesApi: AdaptableApi {
 	/// The following table gives an overview of the possible response codes and their meanings:
 	/// 
 	/// * HTTP 201 A file was uploaded.
-	/// * HTTP 400 Unprocessable Entity – invalid payload.
+	/// * HTTP 400 Unprocessable Entity ��� invalid payload.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not authorized to perform this operation.
 	/// 

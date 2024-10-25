@@ -44,8 +44,12 @@ public class SubscriptionsApi: AdaptableApi {
 	///     **ⓘ Note** Filtering by `typeFilter` may affect paging. Additional post filtering may be performed if OData-like expressions are used in the subscriptions.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getSubscriptions(context: String? = nil, currentPage: Int? = nil, pageSize: Int? = nil, source: String? = nil, subscription: String? = nil, typeFilter: String? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yNotificationSubscriptionCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/notification2/subscriptions")
@@ -99,7 +103,7 @@ public class SubscriptionsApi: AdaptableApi {
 	/// * HTTP 403 Not enough permissions/roles to perform this operation.
 	/// * HTTP 404 Managed object not found.
 	/// * HTTP 409 Duplicated subscription.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -154,7 +158,7 @@ public class SubscriptionsApi: AdaptableApi {
 	/// * HTTP 204 A collection of subscriptions was removed.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not enough permissions/roles to perform this operation.
-	/// * HTTP 422 Unprocessable Entity – error in query parameters
+	/// * HTTP 422 Unprocessable Entity ��� error in query parameters
 	/// 
 	/// - Parameters:
 	///   - xCumulocityProcessingMode:

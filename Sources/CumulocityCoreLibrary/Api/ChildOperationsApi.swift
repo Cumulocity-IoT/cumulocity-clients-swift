@@ -45,8 +45,12 @@ public class ChildOperationsApi: AdaptableApi {
 	///     When set to `true`, the returned result will contain the total number of children in the respective objects (`childAdditions`, `childAssets` and `childDevices`).
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getChildAdditions(id: String, currentPage: Int? = nil, pageSize: Int? = nil, query: String? = nil, withChildren: Bool? = nil, withChildrenCount: Bool? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yManagedObjectReferenceCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/inventory/managedObjects/\(id)/childAdditions")
@@ -268,7 +272,7 @@ public class ChildOperationsApi: AdaptableApi {
 	/// * HTTP 204 Child additions were removed.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Managed object not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -423,8 +427,12 @@ public class ChildOperationsApi: AdaptableApi {
 	///     When set to `true`, the returned result will contain the total number of children in the respective objects (`childAdditions`, `childAssets` and `childDevices`).
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getChildAssets(id: String, currentPage: Int? = nil, pageSize: Int? = nil, query: String? = nil, withChildren: Bool? = nil, withChildrenCount: Bool? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yManagedObjectReferenceCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/inventory/managedObjects/\(id)/childAssets")
@@ -646,7 +654,7 @@ public class ChildOperationsApi: AdaptableApi {
 	/// * HTTP 204 Child assets were removed.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Managed object not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -801,8 +809,12 @@ public class ChildOperationsApi: AdaptableApi {
 	///     When set to `true`, the returned result will contain the total number of children in the respective objects (`childAdditions`, `childAssets` and `childDevices`).
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getChildDevices(id: String, currentPage: Int? = nil, pageSize: Int? = nil, query: String? = nil, withChildren: Bool? = nil, withChildrenCount: Bool? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yManagedObjectReferenceCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/inventory/managedObjects/\(id)/childDevices")
@@ -1024,7 +1036,7 @@ public class ChildOperationsApi: AdaptableApi {
 	/// * HTTP 204 Child devices were removed.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Managed object not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:

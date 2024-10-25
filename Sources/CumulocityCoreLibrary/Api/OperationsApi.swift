@@ -57,8 +57,12 @@ public class OperationsApi: AdaptableApi {
 	///     Status of the operation.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getOperations(agentId: String? = nil, bulkOperationId: String? = nil, currentPage: Int? = nil, dateFrom: String? = nil, dateTo: String? = nil, deviceId: String? = nil, fragmentType: String? = nil, pageSize: Int? = nil, revert: Bool? = nil, status: String? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yOperationCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/devicecontrol/operations")
@@ -110,7 +114,7 @@ public class OperationsApi: AdaptableApi {
 	/// 
 	/// * HTTP 201 An operation was created.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:

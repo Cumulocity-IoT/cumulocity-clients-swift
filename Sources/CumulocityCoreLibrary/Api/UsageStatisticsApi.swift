@@ -106,8 +106,12 @@ public class UsageStatisticsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getTenantUsageStatisticsCollectionResource(currentPage: Int? = nil, dateFrom: String? = nil, dateTo: String? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yTenantUsageStatisticsCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/statistics")
@@ -249,6 +253,8 @@ public class UsageStatisticsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getMetadata(currentPage: Int? = nil, dateFrom: String? = nil, dateTo: String? = nil, pageSize: Int? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yTenantUsageStatisticsFileCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/statistics/files")
@@ -295,7 +301,7 @@ public class UsageStatisticsApi: AdaptableApi {
 	/// 
 	/// * HTTP 201 A statistics file was generated.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:

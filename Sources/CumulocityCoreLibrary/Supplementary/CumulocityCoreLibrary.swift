@@ -22,6 +22,7 @@ extension Cumulocity {
 	    public lazy var applications: ApplicationsFactory = ApplicationsFactory(with: self)
 	    public lazy var measurements: MeasurementsFactory = MeasurementsFactory(with: self)
 	    public lazy var alarms: AlarmsFactory = AlarmsFactory(with: self)
+	    public lazy var featureToggles: FeatureTogglesFactory = FeatureTogglesFactory(with: self)
 	    public lazy var tenants: TenantsFactory = TenantsFactory(with: self)
 	    public lazy var users: UsersFactory = UsersFactory(with: self)
 	    public lazy var audits: AuditsFactory = AuditsFactory(with: self)
@@ -67,6 +68,17 @@ extension Cumulocity {
 			private var factory: Core
 
 			public lazy var alarmsApi: AlarmsApi = AlarmsApi(requestBuilder: factory.requestBuilder, withSession: factory.session)
+
+			fileprivate init(with factory: Core) {
+				self.factory = factory
+			}
+		}
+
+		public class FeatureTogglesFactory {
+
+			private var factory: Core
+
+			public lazy var featureTogglesApi: FeatureTogglesApi = FeatureTogglesApi(requestBuilder: factory.requestBuilder, withSession: factory.session)
 
 			fileprivate init(with factory: Core) {
 				self.factory = factory

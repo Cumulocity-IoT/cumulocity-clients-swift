@@ -9,7 +9,7 @@
 import Foundation
 
 public class C8yError: BadResponseError, Codable {
-	
+	 
 	public required init(from decoder: Decoder) throws {
 		super.init()
 		let container = try decoder.container(keyedBy: CodingKeys.self)

@@ -41,8 +41,12 @@ public class TrustedCertificatesApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getTrustedCertificates(tenantId: String, currentPage: Int? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yTrustedCertificateCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/tenants/\(tenantId)/trusted-certificates")
@@ -81,8 +85,8 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// * HTTP 201 The certificate was added to the tenant.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Tenant not found.
-	/// * HTTP 409 Duplicate – A certificate with the same fingerprint already exists.
-	/// * HTTP 422 Unprocessable Entity – Invalid certificate data.
+	/// * HTTP 409 Duplicate ��� A certificate with the same fingerprint already exists.
+	/// * HTTP 422 Unprocessable Entity ��� Invalid certificate data.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -140,8 +144,8 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// * HTTP 201 The certificates were added to the tenant.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Tenant not found.
-	/// * HTTP 409 Duplicate – A certificate with the same fingerprint already exists.
-	/// * HTTP 422 Unprocessable Entity – Invalid certificates data.
+	/// * HTTP 409 Duplicate ��� A certificate with the same fingerprint already exists.
+	/// * HTTP 422 Unprocessable Entity ��� Invalid certificates data.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -239,7 +243,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// * HTTP 200 The certificate was updated on the tenant.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Certificate not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -593,7 +597,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// > Tip: Required roles
 	///  (ROLE_TENANT_MANAGEMENT_ADMIN *OR* ROLE_TENANT_ADMIN) *AND* is the current tenant 
 	/// 
-	/// **⚠️ Important:** According to CRL policy, added serial numbers cannot be reversed.
+	/// **������ Important:** According to CRL policy, added serial numbers cannot be reversed.
 	/// 
 	/// > Tip: Response Codes
 	/// The following table gives an overview of the possible response codes and their meanings:
@@ -674,7 +678,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// > Tip: Required roles
 	///  (ROLE_TENANT_MANAGEMENT_ADMIN *OR* ROLE_TENANT_ADMIN) *AND* is the current tenant 
 	/// 
-	/// **⚠️ Important:** According to CRL policy, added serial numbers cannot be reversed.
+	/// **������ Important:** According to CRL policy, added serial numbers cannot be reversed.
 	/// 
 	/// > Tip: Response Codes
 	/// The following table gives an overview of the possible response codes and their meanings:

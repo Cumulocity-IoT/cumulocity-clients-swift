@@ -18,7 +18,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// 
 	/// Retrieve all measurements on your tenant, or a specific subset based on queries.
 	/// 
-	/// In case of executing [range queries](https://en.wikipedia.org/wiki/Range_query_(database)) between an upper and lower boundary, for example, querying using `dateFrom`–`dateTo`, the oldest registered measurements are returned first. It is possible to change the order using the query parameter `revert=true`.
+	/// In case of executing [range queries](https://en.wikipedia.org/wiki/Range_query_(database)) between an upper and lower boundary, for example, querying using `dateFrom`���`dateTo`, the oldest registered measurements are returned first. It is possible to change the order using the query parameter `revert=true`.
 	/// 
 	/// For large measurement collections, querying older records without filters can be slow as the server needs to scan from the beginning of the input results set before beginning to return the results. For cases when older measurements should be retrieved, it is recommended to narrow the scope by using range queries based on the time stamp reported by a device. The scope of query can also be reduced significantly when a source device is provided.
 	/// 
@@ -55,8 +55,12 @@ public class MeasurementsApi: AdaptableApi {
 	///     A characteristic which identifies the measurement.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getMeasurements(currentPage: Int? = nil, dateFrom: String? = nil, dateTo: String? = nil, pageSize: Int? = nil, revert: Bool? = nil, source: String? = nil, type: String? = nil, valueFragmentSeries: String? = nil, valueFragmentType: String? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yMeasurementCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/measurement/measurements")
@@ -101,11 +105,11 @@ public class MeasurementsApi: AdaptableApi {
 	/// 
 	/// The example below uses `c8y_Steam` in the request body to illustrate a fragment for recording temperature measurements.
 	/// 
-	/// > **⚠️ Important:** Property names used for fragment and series must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`. This is required to ensure a correct processing and visualization of measurement series on UI graphs.
+	/// > **������ Important:** Property names used for fragment and series must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`. This is required to ensure a correct processing and visualization of measurement series on UI graphs.
 	/// > Tip: Create multiple measurements
 	/// It is also possible to create multiple measurements at once by sending a `measurements` array containing all the measurements to be created. The content type must be `application/vnd.com.nsn.cumulocity.measurementcollection+json`.
 	/// 
-	/// > **ⓘ Note** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).
+	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_MEASUREMENT_ADMIN *OR* owner of the source *OR* MEASUREMENT_ADMIN permission on the source 
@@ -116,7 +120,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// * HTTP 201 A measurement was created.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not authorized to perform this operation.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -169,11 +173,11 @@ public class MeasurementsApi: AdaptableApi {
 	/// 
 	/// The example below uses `c8y_Steam` in the request body to illustrate a fragment for recording temperature measurements.
 	/// 
-	/// > **⚠️ Important:** Property names used for fragment and series must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`. This is required to ensure a correct processing and visualization of measurement series on UI graphs.
+	/// > **������ Important:** Property names used for fragment and series must not contain whitespaces nor the special characters `. , * [ ] ( ) @ $`. This is required to ensure a correct processing and visualization of measurement series on UI graphs.
 	/// > Tip: Create multiple measurements
 	/// It is also possible to create multiple measurements at once by sending a `measurements` array containing all the measurements to be created. The content type must be `application/vnd.com.nsn.cumulocity.measurementcollection+json`.
 	/// 
-	/// > **ⓘ Note** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).
+	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_MEASUREMENT_ADMIN *OR* owner of the source *OR* MEASUREMENT_ADMIN permission on the source 
@@ -184,7 +188,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// * HTTP 201 A measurement was created.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not authorized to perform this operation.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -231,7 +235,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// 
 	/// DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when there are a lot of measurements to be deleted.
 	/// 
-	/// > **⚠️ Important:** DELETE requires at least one of the following parameters: `source`, `dateFrom`, `dateTo`.
+	/// > **������ Important:** DELETE requires at least one of the following parameters: `source`, `dateFrom`, `dateTo`.
 	/// In case of enhanced time series measurements, both `dateFrom` and `dateTo` parameters must be truncated to full hours (for example, 2022-08-19T14:00:00.000Z), otherwise an error will be returned.The `fragmentType` parameter allows to delete measurements only by a measurement fragment when enhanced time series measurements are used.It's not possible to delete by a custom (non-measurement) fragment.
 	/// 
 	/// Example for a valid measurement value fragment:
@@ -263,7 +267,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// * HTTP 204 A collection of measurements was removed.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not authorized to perform this operation.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - xCumulocityProcessingMode:
@@ -391,7 +395,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// 
 	/// It is possible to fetch aggregated results using the `aggregationType` parameter. If the aggregation is not specified, the result will contain no more than 5000 values.
 	/// 
-	/// > **⚠️ Important:** For the aggregation to be done correctly, a device shall always use the same time zone when it sends dates.
+	/// > **������ Important:** For the aggregation to be done correctly, a device shall always use the same time zone when it sends dates.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_MEASUREMENT_READ *OR* owner of the source *OR* MEASUREMENT_READ permission on the source 

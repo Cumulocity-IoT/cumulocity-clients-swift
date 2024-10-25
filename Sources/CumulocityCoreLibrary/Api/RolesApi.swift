@@ -35,8 +35,12 @@ public class RolesApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalElements:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of elements. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalElements` statistics are cached for 10 seconds.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getUserRoles(currentPage: Int? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yUserRoleCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/user/roles")
@@ -161,8 +165,8 @@ public class RolesApi: AdaptableApi {
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not authorized to perform this operation.
 	/// * HTTP 404 Group not found.
-	/// * HTTP 409 Conflict – Role already assigned to the user group.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 409 Conflict ��� Role already assigned to the user group.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -262,7 +266,7 @@ public class RolesApi: AdaptableApi {
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 403 Not enough permissions/roles to perform this operation.
 	/// * HTTP 404 User not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:

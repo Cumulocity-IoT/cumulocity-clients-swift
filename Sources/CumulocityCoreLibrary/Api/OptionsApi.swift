@@ -18,6 +18,7 @@ public class OptionsApi: AdaptableApi {
 	/// 
 	/// Retrieve all the options available on the tenant.
 	/// 
+	/// > **������ Important:** Note that Enterprise Tenants are also allowed to read inherited tenant options from the management tenant.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_OPTION_MANAGEMENT_READ 
@@ -35,6 +36,8 @@ public class OptionsApi: AdaptableApi {
 	///     Indicates how many entries of the collection shall be returned. The upper limit for one page is 2,000 objects.
 	///   - withTotalPages:
 	///     When set to `true`, the returned result will contain in the statistics object the total number of pages. Only applicable on [range queries](https://en.wikipedia.org/wiki/Range_query_(database)).
+	///     
+	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	public func getOptions(currentPage: Int? = nil, pageSize: Int? = nil, withTotalPages: Bool? = nil) -> AnyPublisher<C8yOptionCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/options")
@@ -96,7 +99,7 @@ public class OptionsApi: AdaptableApi {
 	/// 
 	/// * HTTP 200 An option was created.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -135,6 +138,7 @@ public class OptionsApi: AdaptableApi {
 	/// 
 	/// Retrieve all the options (by a specified category) on your tenant.
 	/// 
+	/// > **������ Important:** Note that Enterprise Tenants are also allowed to read inherited tenant options from the management tenant.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_OPTION_MANAGEMENT_READ 
@@ -181,7 +185,7 @@ public class OptionsApi: AdaptableApi {
 	/// 
 	/// * HTTP 200 A collection of options was updated.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
@@ -221,6 +225,7 @@ public class OptionsApi: AdaptableApi {
 	/// 
 	/// Retrieve a specific option (by a given category and key) on your tenant.
 	/// 
+	/// > **������ Important:** Note that Enterprise Tenants are also allowed to read inherited tenant options from the management tenant.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_OPTION_MANAGEMENT_READ 
@@ -271,7 +276,7 @@ public class OptionsApi: AdaptableApi {
 	/// * HTTP 200 An option was updated.
 	/// * HTTP 401 Authentication information is missing or invalid.
 	/// * HTTP 404 Option not found.
-	/// * HTTP 422 Unprocessable Entity – invalid payload.
+	/// * HTTP 422 Unprocessable Entity ��� invalid payload.
 	/// 
 	/// - Parameters:
 	///   - body:
