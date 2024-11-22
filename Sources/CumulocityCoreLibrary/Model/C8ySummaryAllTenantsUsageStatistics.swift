@@ -54,6 +54,12 @@ public struct C8ySummaryAllTenantsUsageStatistics: Codable {
 	/// > **ⓘ Note** Bulk creation of measurements is handled in a way that each measurement is counted individually.
 	public var measurementsCreatedCount: Int?
 
+	/// Number of created operations.
+	public var operationsCreatedCount: Int?
+
+	/// Number of updates made to the operations.
+	public var operationsUpdatedCount: Int?
+
 	/// ID of the parent tenant.
 	public var parentTenantId: String?
 
@@ -113,6 +119,8 @@ public struct C8ySummaryAllTenantsUsageStatistics: Codable {
 		case inventoriesCreatedCount
 		case inventoriesUpdatedCount
 		case measurementsCreatedCount
+		case operationsCreatedCount
+		case operationsUpdatedCount
 		case parentTenantId
 		case peakDeviceCount
 		case peakDeviceWithChildrenCount

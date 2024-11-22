@@ -218,7 +218,6 @@ public class ChildOperationsApi: AdaptableApi {
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
 	public func assignAsChildAddition(body: C8yManagedObject, id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<Data, Error> {
 		var requestBody = body
-		requestBody.owner = nil
 		requestBody.additionParents = nil
 		requestBody.lastUpdated = nil
 		requestBody.childDevices = nil
@@ -600,7 +599,6 @@ public class ChildOperationsApi: AdaptableApi {
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
 	public func assignAsChildAsset(body: C8yManagedObject, id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<Data, Error> {
 		var requestBody = body
-		requestBody.owner = nil
 		requestBody.additionParents = nil
 		requestBody.lastUpdated = nil
 		requestBody.childDevices = nil
@@ -982,7 +980,6 @@ public class ChildOperationsApi: AdaptableApi {
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
 	public func assignAsChildDevice(body: C8yManagedObject, id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<Data, Error> {
 		var requestBody = body
-		requestBody.owner = nil
 		requestBody.additionParents = nil
 		requestBody.lastUpdated = nil
 		requestBody.childDevices = nil

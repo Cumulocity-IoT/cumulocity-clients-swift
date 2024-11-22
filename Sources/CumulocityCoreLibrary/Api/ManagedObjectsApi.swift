@@ -275,7 +275,6 @@ public class ManagedObjectsApi: AdaptableApi {
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
 	public func updateManagedObject(body: C8yManagedObject, id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<C8yManagedObject, Error> {
 		var requestBody = body
-		requestBody.owner = nil
 		requestBody.additionParents = nil
 		requestBody.lastUpdated = nil
 		requestBody.childDevices = nil
@@ -381,16 +380,16 @@ public class ManagedObjectsApi: AdaptableApi {
 	/// 
 	/// * HTTP 200 The request has succeeded and the date is sent in the response.
 	/// * HTTP 401 Authentication information is missing or invalid.
-	/// * HTTP 404 Managed object not found.
+	/// * HTTP 404 A device with provided ID is not monitored.
 	/// 
 	/// - Parameters:
 	///   - id:
 	///     Unique identifier of the managed object.
-	public func getLatestAvailability(id: String) -> AnyPublisher<String, Error> {
+	public func getLatestAvailability(id: String) -> AnyPublisher<C8yManagedObjectAvailability, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/inventory/managedObjects/\(id)/availability")
 			.set(httpMethod: "get")
-			.add(header: "Accept", value: "application/vnd.com.nsn.cumulocity.error+json, text/plain, application/json")
+			.add(header: "Accept", value: "application/vnd.com.nsn.cumulocity.error+json, application/json")
 		return self.session.dataTaskPublisher(for: adapt(builder: builder).build()).tryMap({ element -> Data in
 			guard let httpResponse = element.response as? HTTPURLResponse else {
 				throw URLError(.badServerResponse)
@@ -403,7 +402,7 @@ public class ManagedObjectsApi: AdaptableApi {
 				throw BadResponseError(with: httpResponse)
 			}
 			return element.data
-		}).decode(type: String.self, decoder: JSONDecoder()).eraseToAnyPublisher()
+		}).decode(type: C8yManagedObjectAvailability.self, decoder: JSONDecoder()).eraseToAnyPublisher()
 	}
 	
 	/// Retrieve all supported measurement fragments of a specific managed object

@@ -52,6 +52,12 @@ public struct C8ySummaryTenantUsageStatistics: Codable {
 	/// > **ⓘ Note** Bulk creation of measurements is handled in a way that each measurement is counted individually.
 	public var measurementsCreatedCount: Int?
 
+	/// Number of created operations.
+	public var operationsCreatedCount: Int?
+
+	/// Number of updates made to the operations.
+	public var operationsUpdatedCount: Int?
+
 	/// Number of requests that were made against the tenant. Updated every 5 minutes. The following requests are not included:
 	/// 
 	/// * Internal SmartREST requests used to resolve templates
@@ -86,6 +92,8 @@ public struct C8ySummaryTenantUsageStatistics: Codable {
 		case inventoriesCreatedCount
 		case inventoriesUpdatedCount
 		case measurementsCreatedCount
+		case operationsCreatedCount
+		case operationsUpdatedCount
 		case requestCount
 		case resources
 		case storageSize

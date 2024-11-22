@@ -79,7 +79,7 @@ public struct C8yAuditRecord: Codable {
 	/// The severity of the audit action.
 	public var severity: C8ySeverity?
 
-	/// The managed object to which the audit is associated.
+	/// The platform component ID to which the audit is associated.
 	public var source: C8ySource?
 
 	/// Details of the action that was carried out.
@@ -242,7 +242,7 @@ public struct C8yAuditRecord: Codable {
 	}
 
 
-	/// The managed object to which the audit is associated.
+	/// The platform component ID to which the audit is associated.
 	public struct C8ySource: Codable {
 	
 		/// Unique identifier of the object.
