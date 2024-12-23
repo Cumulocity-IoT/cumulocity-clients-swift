@@ -13,7 +13,7 @@ public class AdaptableApi {
     let requestBuilder: URLRequestBuilder
     let session: URLSession
 
-	public init(requestBuilder: URLRequestBuilder = URLRequestBuilder(), withSession session: URLSession = URLSession.shared) {
+	public init(requestBuilder: URLRequestBuilder = URLRequestBuilder(), withSession session: URLSession = Cumulocity.Core.shared.session) {
 		self.requestBuilder = requestBuilder
  		self.session = session
 	}
