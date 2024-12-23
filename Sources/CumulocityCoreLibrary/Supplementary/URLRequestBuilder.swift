@@ -71,8 +71,8 @@ public class URLRequestBuilder {
     }
 
     @discardableResult
-	public func set(authorization userName: String, password: String) -> URLRequestBuilder {
-		let credentials = "\(userName):\(password)"
+    public func set(authorization userName: String, password: String) -> URLRequestBuilder {
+        let credentials = "\(userName):\(password)"
 		if let encodedCredentials = credentials.data(using: .utf8) {
 			self.requestHeaders["Authorization"] = "Basic " + encodedCredentials.base64EncodedString()
 		}
