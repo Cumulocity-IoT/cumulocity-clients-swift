@@ -70,7 +70,7 @@ public class URLRequestBuilder {
         return self
     }
 
-	@discardableResult
+    @discardableResult
 	public func set(authorization userName: String, password: String) -> URLRequestBuilder {
 		let credentials = "\(userName):\(password)"
 		if let encodedCredentials = credentials.data(using: .utf8) {
@@ -83,7 +83,7 @@ public class URLRequestBuilder {
     ///
     /// The parameter will be serialized as `?key=value`.
     @discardableResult
-	public func add<Subject>(queryItem key: String, value: Subject?) -> URLRequestBuilder {
+    public func add<Subject>(queryItem key: String, value: Subject?) -> URLRequestBuilder {
         if let v = value {
             let valueAsString = String(describing: v)
             guard !valueAsString.isEmpty else {
@@ -113,8 +113,8 @@ public class URLRequestBuilder {
         return self
     }
 
-	@discardableResult
-	public func set(httpBody: Data?) -> URLRequestBuilder {
+    @discardableResult
+    public func set(httpBody: Data?) -> URLRequestBuilder {
         self.httpBody = httpBody
         return self
     }
