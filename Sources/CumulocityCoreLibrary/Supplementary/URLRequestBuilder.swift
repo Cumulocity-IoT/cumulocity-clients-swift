@@ -34,32 +34,32 @@ public class URLRequestBuilder {
 		self.queryItems = with.queryItems
 	}
 
-	@discardableResult
+    @discardableResult
     public func set(scheme: String) -> URLRequestBuilder {
         self.components.scheme = scheme
         return self
     }
 
-	@discardableResult
+    @discardableResult
     public func set(host: String) -> URLRequestBuilder {
         self.components.host = host
         return self
     }
 
-	@discardableResult
+    @discardableResult
     public func set(resourcePath: String) -> URLRequestBuilder {
         self.components.path = resourcePath
         return self
     }
 
-	@discardableResult
+    @discardableResult
     public func set(httpMethod: String) -> URLRequestBuilder {
 		self.httpMethod = httpMethod
 		return self
 	}
 
-	@discardableResult
-	public func add<Subject>(header: String, value: Subject?) -> URLRequestBuilder {
+    @discardableResult
+    public func add<Subject>(header: String, value: Subject?) -> URLRequestBuilder {
         if let v = value {
             let valueAsString = String(describing: v)
             guard !valueAsString.isEmpty else {
