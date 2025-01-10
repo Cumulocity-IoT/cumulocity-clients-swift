@@ -15,7 +15,7 @@ public class BadResponseError : LocalizedError {
     public var httpResponse: HTTPURLResponse?
 
     public var errorDescription: String? {
-		return "Request failed with \(String(describing: self.failureReason)) return code."
+		return "Request failed with \(String(describing: self.failureReason ?? 0)) return code."
 	}
 
 	public var failureReason: String? {
