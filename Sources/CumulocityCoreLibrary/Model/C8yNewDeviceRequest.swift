@@ -34,7 +34,7 @@ public struct C8yNewDeviceRequest: Codable {
 	/// Date and time when the device was created in the database.
 	public var creationTime: String?
 
-	/// When accepting a device request, the security token is verified against the token submitted by the device when requesting credentials.See [Security token policy](https://cumulocity.com/docs/device-management-application/registering-devices/#security-token-policy) for details on configuration.See [Create device credentials](/#operation/postDeviceCredentialsCollectionResource) for details on creating token for device registration.`securityToken` parameter can be added only when submitting `ACCEPTED` status.
+	/// When accepting a device request, the security token is verified against the token submitted by the device when requesting credentials.See [Security token policy](https://www.cumulocity.com/docs/device-management-application/registering-devices/#security-token-policy) for details on configuration.See [Create device credentials](/#operation/postDeviceCredentialsCollectionResource) for details on creating token for device registration.`securityToken` parameter can be added only when submitting `ACCEPTED` status.
 	public var securityToken: String?
 
 	enum CodingKeys: String, CodingKey {

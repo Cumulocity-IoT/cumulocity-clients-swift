@@ -25,7 +25,7 @@ public struct C8yDeviceCredentials: Codable {
 	/// Username of these device credentials.
 	public var username: String?
 
-	/// Security token which is required and verified against during device request acceptance.See [Security token policy](https://cumulocity.com/docs/device-management-application/registering-devices/#security-token-policy) for more details on configuration.See [Update specific new device request status](/#operation/putNewDeviceRequestResource) for details on submitting token upon device acceptance.
+	/// Security token which is required and verified against during device request acceptance.See [Security token policy](https://www.cumulocity.com/docs/device-management-application/registering-devices/#security-token-policy) for more details on configuration.See [Update specific new device request status](/#operation/putNewDeviceRequestResource) for details on submitting token upon device acceptance.
 	public var securityToken: String?
 
 	enum CodingKeys: String, CodingKey {

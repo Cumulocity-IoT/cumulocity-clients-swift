@@ -34,26 +34,31 @@ public class URLRequestBuilder {
 		self.queryItems = with.queryItems
 	}
 
-    public func set(scheme: String) -> URLRequestBuilder {
-        self.components.scheme = scheme
-        return self
-    }
-
-    public func set(host: String) -> URLRequestBuilder {
-        self.components.host = host
-        return self
-    }
-
-    public func set(resourcePath: String) -> URLRequestBuilder {
-        self.components.path = resourcePath
-        return self
-    }
-
-    public func set(httpMethod: String) -> URLRequestBuilder {
-		self.httpMethod = httpMethod
+	@discardableResult
+	public func set(scheme: String) -> URLRequestBuilder {
+		self.components.scheme = scheme
 		return self
 	}
 
+    @discardableResult
+    public func set(host: String) -> URLRequestBuilder {
+    	self.components.host = host
+    	return self
+    }
+
+    @discardableResult
+    public func set(resourcePath: String) -> URLRequestBuilder {
+    	self.components.path = resourcePath
+    	return self
+    }
+
+    @discardableResult
+    public func set(httpMethod: String) -> URLRequestBuilder {
+    	self.httpMethod = httpMethod
+    	return self
+    }
+
+	@discardableResult
 	public func add<Subject>(header: String, value: Subject?) -> URLRequestBuilder {
         if let v = value {
             let valueAsString = String(describing: v)
@@ -65,6 +70,7 @@ public class URLRequestBuilder {
         return self
     }
 
+	@discardableResult
 	public func set(authorization userName: String, password: String) -> URLRequestBuilder {
 		let credentials = "\(userName):\(password)"
 		if let encodedCredentials = credentials.data(using: .utf8) {
@@ -76,7 +82,8 @@ public class URLRequestBuilder {
 	/// Appends a ``URLQueryItem`` based on the passed ``key``/``value`` pair if ``value`` is not nil.
     ///
     /// The parameter will be serialized as `?key=value`.
-	public func add<Subject>(queryItem key: String, value: Subject?) -> URLRequestBuilder {
+    @discardableResult
+    public func add<Subject>(queryItem key: String, value: Subject?) -> URLRequestBuilder {
         if let v = value {
             let valueAsString = String(describing: v)
             guard !valueAsString.isEmpty else {
@@ -92,6 +99,7 @@ public class URLRequestBuilder {
     /// The parameter `explode` defines the serialisation method:
     /// - If `true`, parameter will be serialized as `?key=1&key=2&key=3`.
     /// - If `false`, parameter will be serialized as `?key=1,2,3`.
+    @discardableResult
     public func add<Subject>(queryItem key: String, value: [Subject]?, explode: ParameterSerializationType = .exploded) -> URLRequestBuilder {
         if let v = value {
             if explode == .exploded {
@@ -105,6 +113,7 @@ public class URLRequestBuilder {
         return self
     }
 
+	@discardableResult
 	public func set(httpBody: Data?) -> URLRequestBuilder {
         self.httpBody = httpBody
         return self

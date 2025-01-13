@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity IoT user documentation.
+/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://www.cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity IoT user documentation.
 public struct C8yOAuthSessionConfiguration: Codable {
 
 	/// Maximum session duration (in milliseconds) during which a user does not have to login again.

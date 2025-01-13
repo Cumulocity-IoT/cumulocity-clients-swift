@@ -11,7 +11,7 @@ import Combine
 
 /// API methods for managing trusted certificates used to establish device connections via MQTT.
 /// 
-/// More detailed information about trusted certificates and their role can be found in [Device management > Device management application > Managing device data](https://cumulocity.com/docs/device-management-application/managing-device-data/) in the Cumulocity IoT user documentation.
+/// More detailed information about trusted certificates and their role can be found in [Device management > Device management application > Managing device data](https://www.cumulocity.com/docs/device-management-application/managing-device-data/) in the Cumulocity IoT user documentation.
 /// 
 /// > **ⓘ Note** The Accept header must be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class TrustedCertificatesApi: AdaptableApi {

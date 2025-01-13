@@ -11,7 +11,7 @@ import Combine
 
 /// The inventory stores devices and other assets relevant to your IoT solution. We refer to them as managed objects and such can be ���smart objects���, for example, smart electricity meters, home automation gateways or GPS devices.
 /// 
-/// For further information, refer to [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Managed objects](https://cumulocity.com/docs/concepts/domain-model/#managed-objects) in the Cumulocity IoT user documentation.
+/// For further information, refer to [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Managed objects](https://www.cumulocity.com/docs/concepts/domain-model/#managed-objects) in the Cumulocity IoT user documentation.
 /// 
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class ManagedObjectsApi: AdaptableApi {
@@ -133,7 +133,7 @@ public class ManagedObjectsApi: AdaptableApi {
 	/// 
 	/// Imagine, for example, that you want to describe electric meters from different vendors. Depending on the make of the meter, one may have a relay and one may be capable to measure a single phase or three phases (for example, a three-phase electricity sensor). A fragment `c8y_ThreePhaseElectricitySensor` would identify such an electric meter. Devices' characteristics are identified by storing fragments for each of them.
 	/// 
-	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
+	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://www.cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_INVENTORY_ADMIN *OR* ROLE_INVENTORY_CREATE *OR* ROLE_MANAGED_OBJECT_ADMIN *OR* ROLE_MANAGED_OBJECT_CREATE 

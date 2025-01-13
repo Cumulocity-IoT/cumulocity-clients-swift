@@ -101,7 +101,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// * `value` - The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it's a 64-bit two's complement integer. The `value` is mandatory for a fragment.
 	/// * `unit` - The unit of the measurements.
 	/// 
-	/// Review the [System of units](#section/System-of-units) section for details about the conversions of units. Also review [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Fragments > Naming conventions of fragments](https://cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments) in the Cumulocity IoT user documentation.
+	/// Review the [System of units](#section/System-of-units) section for details about the conversions of units. Also review [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Fragments > Naming conventions of fragments](https://www.cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments) in the Cumulocity IoT user documentation.
 	/// 
 	/// The example below uses `c8y_Steam` in the request body to illustrate a fragment for recording temperature measurements.
 	/// 
@@ -109,7 +109,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// > Tip: Create multiple measurements
 	/// It is also possible to create multiple measurements at once by sending a `measurements` array containing all the measurements to be created. The content type must be `application/vnd.com.nsn.cumulocity.measurementcollection+json`.
 	/// 
-	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
+	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://www.cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_MEASUREMENT_ADMIN *OR* owner of the source *OR* MEASUREMENT_ADMIN permission on the source 
@@ -169,7 +169,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// * `value` - The value of the individual measurement. The maximum precision for floating point numbers is 64-bit IEEE 754. For integers it's a 64-bit two's complement integer. The `value` is mandatory for a fragment.
 	/// * `unit` - The unit of the measurements.
 	/// 
-	/// Review the [System of units](#section/System-of-units) section for details about the conversions of units. Also review [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Fragments > Naming conventions of fragments](https://cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments) in the Cumulocity IoT user documentation.
+	/// Review the [System of units](#section/System-of-units) section for details about the conversions of units. Also review [Getting started > Technical concepts > Cumulocity IoT's domain model > Inventory > Fragments > Naming conventions of fragments](https://www.cumulocity.com/docs/concepts/domain-model/#naming-conventions-of-fragments) in the Cumulocity IoT user documentation.
 	/// 
 	/// The example below uses `c8y_Steam` in the request body to illustrate a fragment for recording temperature measurements.
 	/// 
@@ -177,7 +177,7 @@ public class MeasurementsApi: AdaptableApi {
 	/// > Tip: Create multiple measurements
 	/// It is also possible to create multiple measurements at once by sending a `measurements` array containing all the measurements to be created. The content type must be `application/vnd.com.nsn.cumulocity.measurementcollection+json`.
 	/// 
-	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
+	/// > **ⓘ Note** For more details about fragments with specific meanings, refer to [Device management & connectivity > Device integration > Fragment library](https://www.cumulocity.com/docs/device-integration/fragment-library/) in the Cumulocity IoT user documentation.
 	/// 
 	/// > Tip: Required roles
 	///  ROLE_MEASUREMENT_ADMIN *OR* owner of the source *OR* MEASUREMENT_ADMIN permission on the source 
