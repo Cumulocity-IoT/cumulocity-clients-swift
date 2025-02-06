@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-/// API methods to create, retrieve, update and delete users in Cumulocity IoT.
+/// API methods to create, retrieve, update and delete users in Cumulocity.
 /// 
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class UsersApi: AdaptableApi {
@@ -31,7 +31,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - currentPage:
 	///     The current page of the paginated results.
 	///   - groups:
@@ -106,7 +106,7 @@ public class UsersApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func createUser(body: C8yUser, tenantId: String) -> AnyPublisher<C8yUser, Error> {
 		var requestBody = body
 		requestBody.owner = nil
@@ -167,7 +167,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func getUser(tenantId: String, userId: String) -> AnyPublisher<C8yUser, Error> {
@@ -219,7 +219,7 @@ public class UsersApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func updateUser(body: C8yUser, tenantId: String, userId: String) -> AnyPublisher<C8yUser, Error> {
@@ -281,7 +281,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func deleteUser(tenantId: String, userId: String) -> AnyPublisher<Data, Error> {
@@ -322,7 +322,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func getUserTfaSettings(tenantId: String, userId: String) -> AnyPublisher<C8yUserTfaData, Error> {
@@ -363,7 +363,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - username:
 	///     The username of the a user.
 	public func getUserByUsername(tenantId: String, username: String) -> AnyPublisher<C8yUser, Error> {
@@ -404,7 +404,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - currentPage:
@@ -461,7 +461,7 @@ public class UsersApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	public func assignUserToUserGroup(body: C8ySubscribedUser, tenantId: String, groupId: Int) -> AnyPublisher<C8yUserReference, Error> {
@@ -511,7 +511,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - userId:
@@ -594,7 +594,7 @@ public class UsersApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func logoutAllUsers(tenantId: String) -> AnyPublisher<Data, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/user/logout/\(tenantId)/allUsers")

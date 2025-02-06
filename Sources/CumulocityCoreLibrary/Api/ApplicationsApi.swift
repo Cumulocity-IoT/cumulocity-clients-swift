@@ -13,9 +13,9 @@ import Combine
 /// 
 /// ###��Application names
 /// 
-/// For each tenant, Cumulocity IoT manages the subscribed applications and provides a number of applications of various types.In case you want to subscribe a tenant to an application using an API, you must use the application name in the argument (as name).
+/// For each tenant, Cumulocity manages the subscribed applications and provides a number of applications of various types.In case you want to subscribe a tenant to an application using an API, you must use the application name in the argument (as name).
 /// 
-/// Refer to the tables in [Platform administration > Standard tenant administration > Managing the ecosystem > Managing applications](https://www.cumulocity.com/docs/standard-tenant/ecosystem/#managing-applications) in the Cumulocity IoT user documentation for the respective application name to be used.
+/// Refer to the tables in [Platform administration > Standard tenant administration > Managing the ecosystem > Managing applications](https://www.cumulocity.com/docs/standard-tenant/ecosystem/#managing-applications) in the Cumulocity user documentation for the respective application name to be used.
 /// 
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class ApplicationsApi: AdaptableApi {
@@ -403,7 +403,7 @@ public class ApplicationsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func getApplicationsByTenant(tenantId: String) -> AnyPublisher<C8yApplicationCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/application/applicationsByTenant/\(tenantId)")
@@ -440,7 +440,7 @@ public class ApplicationsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - currentPage:
 	///     The current page of the paginated results.
 	///   - pageSize:

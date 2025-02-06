@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-/// Events are used to pass real-time information through Cumulocity IoT.
+/// Events are used to pass real-time information through Cumulocity.
 /// 
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class EventsApi: AdaptableApi {

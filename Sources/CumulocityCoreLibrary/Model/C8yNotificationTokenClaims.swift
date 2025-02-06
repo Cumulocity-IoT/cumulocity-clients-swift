@@ -22,7 +22,7 @@ public struct C8yNotificationTokenClaims: Codable {
 	/// The subscription type. Currently the only supported type is `notification` .Other types may be added in future.
 	public var type: C8yType?
 
-	/// If `true`, the token will be securely signed by the Cumulocity IoT platform.
+	/// If `true`, the token will be securely signed by the Cumulocity platform.
 	public var signed: Bool?
 
 	/// If `true`, indicates that the token is used to create a shared consumer on the subscription.

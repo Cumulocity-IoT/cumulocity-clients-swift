@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The connection information computed by Cumulocity IoT is stored in fragments `c8y_Connection` of the device.
+/// The connection information computed by Cumulocity is stored in fragments `c8y_Connection` of the device.
 public struct C8yConnection: Codable {
 
 	/// The current status of connection, one of `CONNECTED`, `DISCONNECTED`, `MAINTENANCE`.

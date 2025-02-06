@@ -11,7 +11,7 @@ import Combine
 
 /// API methods to create, retrieve, update and delete user groups.
 /// 
-/// > **������ Important:** In the Cumulocity IoT user interface, user groups are referred to as "global roles". Global roles are not to be confused with user roles.
+/// > **������ Important:** In the Cumulocity user interface, user groups are referred to as "global roles". Global roles are not to be confused with user roles.
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class GroupsApi: AdaptableApi {
 
@@ -32,7 +32,7 @@ public class GroupsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - currentPage:
 	///     The current page of the paginated results.
 	///   - pageSize:
@@ -90,7 +90,7 @@ public class GroupsApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func createUserGroup(body: C8yGroup, tenantId: String) -> AnyPublisher<C8yGroup, Error> {
 		var requestBody = body
 		requestBody.roles = nil
@@ -144,7 +144,7 @@ public class GroupsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - forceLogout:
@@ -191,7 +191,7 @@ public class GroupsApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - forceLogout:
@@ -250,7 +250,7 @@ public class GroupsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - forceLogout:
@@ -294,7 +294,7 @@ public class GroupsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupName:
 	///     The name of the user group.
 	public func getUserGroupByName(tenantId: String, groupName: String) -> AnyPublisher<C8yGroup, Error> {
@@ -335,7 +335,7 @@ public class GroupsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	///   - currentPage:

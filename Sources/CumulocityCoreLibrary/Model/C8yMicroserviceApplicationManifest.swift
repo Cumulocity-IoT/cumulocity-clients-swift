@@ -104,7 +104,7 @@ public struct C8yMicroserviceApplicationManifest: Codable {
 
 	public struct C8yExtensions: Codable {
 	
-		/// The relative path in Cumulocity IoT for this microservice application.
+		/// The relative path in Cumulocity for this microservice application.
 		public var path: String?
 	
 		/// The type of this extension.

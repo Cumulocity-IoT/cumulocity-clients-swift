@@ -223,7 +223,7 @@ public class AlarmsApi: AdaptableApi {
 	/// * A history of changes to the event in form of audit logs.
 	/// 
 	/// > Tip: Alarm suppression
-	/// If the source device is in maintenance mode, the alarm is not created and not reported to the Cumulocity IoT event processing engine. When sending a POST request to create a new alarm and if the source device is in maintenance mode, the self link of the alarm will be:
+	/// If the source device is in maintenance mode, the alarm is not created and not reported to the Cumulocity event processing engine. When sending a POST request to create a new alarm and if the source device is in maintenance mode, the self link of the alarm will be:
 	/// 
 	/// ```json
 	/// "self": "https://<TENANT_DOMAIN>/alarm/alarms/null"

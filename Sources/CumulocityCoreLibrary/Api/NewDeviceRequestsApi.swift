@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-/// API methods to create, retrieve, update and delete new device requests in Cumulocity IoT.
+/// API methods to create, retrieve, update and delete new device requests in Cumulocity.
 /// 
 /// > **ⓘ Note** The Accept header should be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class NewDeviceRequestsApi: AdaptableApi {

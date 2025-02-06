@@ -45,7 +45,7 @@ public struct C8yTenant: Codable {
 	/// URL of the tenant's domain. The domain name permits only the use of alphanumeric characters separated by dots `.` and hyphens `-`.
 	public var domain: String?
 
-	/// Unique identifier of a Cumulocity IoT tenant.
+	/// Unique identifier of a Cumulocity tenant.
 	public var id: String?
 
 	/// Collection of the owned applications.

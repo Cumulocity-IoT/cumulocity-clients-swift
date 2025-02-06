@@ -120,7 +120,7 @@ public class ExternalIDsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - type:
-	///     The identifier used in the external system that Cumulocity IoT interfaces with.
+	///     The identifier used in the external system that Cumulocity interfaces with.
 	///   - externalId:
 	///     The type of the external identifier.
 	public func getExternalId(type: String, externalId: String) -> AnyPublisher<C8yExternalId, Error> {
@@ -160,7 +160,7 @@ public class ExternalIDsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - type:
-	///     The identifier used in the external system that Cumulocity IoT interfaces with.
+	///     The identifier used in the external system that Cumulocity interfaces with.
 	///   - externalId:
 	///     The type of the external identifier.
 	public func deleteExternalId(type: String, externalId: String) -> AnyPublisher<Data, Error> {

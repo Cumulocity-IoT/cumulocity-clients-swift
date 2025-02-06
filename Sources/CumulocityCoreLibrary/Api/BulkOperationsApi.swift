@@ -140,7 +140,7 @@ public class BulkOperationsApi: AdaptableApi {
 	/// - Parameters:
 	///   - id:
 	///     Unique identifier of the bulk operation.
-	public func getBulkOperation(id: String) -> AnyPublisher<C8yBulkOperation, Error> {
+	public func getBulkOperation(id: Int) -> AnyPublisher<C8yBulkOperation, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/devicecontrol/bulkoperations/\(id)")
 			.set(httpMethod: "get")
@@ -182,7 +182,7 @@ public class BulkOperationsApi: AdaptableApi {
 	///     Unique identifier of the bulk operation.
 	///   - xCumulocityProcessingMode:
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
-	public func updateBulkOperation(body: C8yBulkOperation, id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<C8yBulkOperation, Error> {
+	public func updateBulkOperation(body: C8yBulkOperation, id: Int, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<C8yBulkOperation, Error> {
 		var requestBody = body
 		requestBody.generalStatus = nil
 		requestBody.`self` = nil
@@ -238,7 +238,7 @@ public class BulkOperationsApi: AdaptableApi {
 	///     Unique identifier of the bulk operation.
 	///   - xCumulocityProcessingMode:
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
-	public func deleteBulkOperation(id: String, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<Data, Error> {
+	public func deleteBulkOperation(id: Int, xCumulocityProcessingMode: String? = nil) -> AnyPublisher<Data, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/devicecontrol/bulkoperations/\(id)")
 			.set(httpMethod: "delete")

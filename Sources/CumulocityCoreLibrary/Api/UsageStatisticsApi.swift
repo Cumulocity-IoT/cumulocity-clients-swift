@@ -37,7 +37,7 @@ import Combine
 /// * Bulk creation requests with a wrong payload are not counted for inbound data transfer count.
 /// 
 /// > Tip: Total inbound data transfer
-/// Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity IoT platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity IoT platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client.
+/// Inbound data transfer refers to the total number of inbound requests performed to transfer data into the Cumulocity platform. This includes sensor readings, alarms, events, commands and alike that are transferred between devices and the Cumulocity platform using the REST and/or MQTT interfaces. Such an inbound request could also originate from a custom microservice, website or any other client.
 /// 
 /// See the table below for more information on how the counters are increased. Additionally, it shows how inbound data transfers are handled for both MQTT and REST:
 /// 
@@ -160,7 +160,7 @@ public class UsageStatisticsApi: AdaptableApi {
 	///   - dateTo:
 	///     End date or date and time of the statistics.
 	///   - tenant:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func getTenantUsageStatistics(dateFrom: String? = nil, dateTo: String? = nil, tenant: String? = nil) -> AnyPublisher<C8ySummaryTenantUsageStatistics, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/statistics/summary")

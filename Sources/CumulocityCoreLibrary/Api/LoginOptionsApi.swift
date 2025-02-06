@@ -11,7 +11,7 @@ import Combine
 
 /// API methods to retrieve the login options configured in the tenant.
 /// 
-/// More detailed information about the parameters and their meaning can be found in [Platform administration > Standard tenant administration > Changing settings](https://www.cumulocity.com/docs/standard-tenant/changing-settings/) in the Cumulocity IoT user documentation.
+/// More detailed information about the parameters and their meaning can be found in [Platform administration > Standard tenant administration > Changing settings](https://www.cumulocity.com/docs/standard-tenant/changing-settings/) in the Cumulocity user documentation.
 /// 
 /// > **ⓘ Note** If OAuth external is the only login option shown in the response, the user will be automatically redirected to the SSO login screen.
 public class LoginOptionsApi: AdaptableApi {
@@ -32,7 +32,7 @@ public class LoginOptionsApi: AdaptableApi {
 	///     
 	///     **ⓘ Note** The `tenantId` parameter must not be present in the request when using the `management` parameter, otherwise it will cause an error.
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func getLoginOptions(management: Bool? = nil, tenantId: String? = nil) -> AnyPublisher<C8yLoginOptionCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/loginOptions")
@@ -258,7 +258,7 @@ public class LoginOptionsApi: AdaptableApi {
 	///   - typeOrId:
 	///     The type or ID of the login option. The type's value is case insensitive and can be `OAUTH2`, `OAUTH2_INTERNAL` or `BASIC`.
 	///   - targetTenant:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func updateLoginOptionAccess(body: C8yAuthConfigAccess, typeOrId: String, targetTenant: String) -> AnyPublisher<C8yAuthConfig, Error> {
 		let requestBody = body
 		var encodedRequestBody: Data? = nil

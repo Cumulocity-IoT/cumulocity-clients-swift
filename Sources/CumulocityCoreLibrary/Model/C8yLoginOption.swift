@@ -35,7 +35,7 @@ public struct C8yLoginOption: Codable {
 	/// A URL linking to this resource.
 	public var `self`: String?
 
-	/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://www.cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity IoT user documentation.
+	/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://www.cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity user documentation.
 	public var sessionConfiguration: C8yOAuthSessionConfiguration?
 
 	/// Enforce password strength validation on subtenant level. `enforceStrength` enforces it on all tenants in the platform.
@@ -47,7 +47,7 @@ public struct C8yLoginOption: Codable {
 	/// The type of authentication. See [Authentication](#section/Authentication) for more details.
 	public var type: String?
 
-	/// Specifies if the users are managed internally by Cumulocity IoT (`INTERNAL`) or if the users data are managed by a external system (`REMOTE`).
+	/// Specifies if the users are managed internally by Cumulocity (`INTERNAL`) or if the users data are managed by a external system (`REMOTE`).
 	public var userManagementSource: String?
 
 	/// Indicates if this login option is available in the login page (only for SSO).

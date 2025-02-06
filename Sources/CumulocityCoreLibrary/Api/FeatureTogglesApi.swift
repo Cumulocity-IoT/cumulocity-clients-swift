@@ -232,7 +232,7 @@ public class FeatureTogglesApi: AdaptableApi {
 	///   - featureKey:
 	///     A unique key of the feature toggle.
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func setGivenTenantFeatureToggleValue(body: C8yFeatureToggleValue, featureKey: String, tenantId: String) -> AnyPublisher<Data, Error> {
 		let requestBody = body
 		var encodedRequestBody: Data? = nil
@@ -282,7 +282,7 @@ public class FeatureTogglesApi: AdaptableApi {
 	///   - featureKey:
 	///     A unique key of the feature toggle.
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func unsetGivenTenantFeatureToggleValue(featureKey: String, tenantId: String) -> AnyPublisher<Data, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/features/\(featureKey)/by-tenant/\(tenantId)")

@@ -11,7 +11,7 @@ import Combine
 
 /// API methods for managing trusted certificates used to establish device connections via MQTT.
 /// 
-/// More detailed information about trusted certificates and their role can be found in [Device management > Device management application > Managing device data](https://www.cumulocity.com/docs/device-management-application/managing-device-data/) in the Cumulocity IoT user documentation.
+/// More detailed information about trusted certificates and their role can be found in [Device management > Device management application > Managing device data](https://www.cumulocity.com/docs/device-management-application/managing-device-data/) in the Cumulocity user documentation.
 /// 
 /// > **ⓘ Note** The Accept header must be provided in all POST/PUT requests, otherwise an empty response body will be returned.
 public class TrustedCertificatesApi: AdaptableApi {
@@ -34,7 +34,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - currentPage:
 	///     The current page of the paginated results.
 	///   - pageSize:
@@ -73,7 +73,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	
 	/// Add a new certificate
 	/// 
-	/// Add a new trusted certificate to a specific tenant (by a given ID) which can be further used by the devices to establish connections with the Cumulocity IoT platform.
+	/// Add a new trusted certificate to a specific tenant (by a given ID) which can be further used by the devices to establish connections with the Cumulocity platform.
 	/// 
 	/// 
 	/// > Tip: Required roles
@@ -92,13 +92,13 @@ public class TrustedCertificatesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - xCumulocityProcessingMode:
 	///     Used to explicitly control the processing mode of the request. See [Processing mode](#processing-mode) for more details.
 	///   - addToTrustStore:
 	///     If set to `true` the certificate is added to the truststore.
 	///     
-	///     The truststore contains all trusted certificates. A connection to a device is only established if it connects to Cumulocity IoT with a certificate in the truststore.
+	///     The truststore contains all trusted certificates. A connection to a device is only established if it connects to Cumulocity with a certificate in the truststore.
 	public func addTrustedCertificate(body: C8yUploadedTrustedCertificate, tenantId: String, xCumulocityProcessingMode: String? = nil, addToTrustStore: Bool? = nil) -> AnyPublisher<C8yTrustedCertificate, Error> {
 		let requestBody = body
 		var encodedRequestBody: Data? = nil
@@ -132,7 +132,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	
 	/// Add multiple certificates
 	/// 
-	/// Add multiple trusted certificates to a specific tenant (by a given ID) which can be further used by the devices to establish connections with the Cumulocity IoT platform.
+	/// Add multiple trusted certificates to a specific tenant (by a given ID) which can be further used by the devices to establish connections with the Cumulocity platform.
 	/// 
 	/// 
 	/// > Tip: Required roles
@@ -151,11 +151,11 @@ public class TrustedCertificatesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - addToTrustStore:
 	///     If set to `true` the certificate is added to the truststore.
 	///     
-	///     The truststore contains all trusted certificates. A connection to a device is only established if it connects to Cumulocity IoT with a certificate in the truststore.
+	///     The truststore contains all trusted certificates. A connection to a device is only established if it connects to Cumulocity with a certificate in the truststore.
 	public func addTrustedCertificates(body: C8yUploadedTrustedCertificateCollection, tenantId: String, addToTrustStore: Bool? = nil) -> AnyPublisher<C8yTrustedCertificateCollection, Error> {
 		var requestBody = body
 		requestBody.next = nil
@@ -206,7 +206,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func getTrustedCertificate(tenantId: String, fingerprint: String) -> AnyPublisher<C8yTrustedCertificate, Error> {
@@ -249,7 +249,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func updateTrustedCertificate(body: C8yTrustedCertificate, tenantId: String, fingerprint: String) -> AnyPublisher<C8yTrustedCertificate, Error> {
@@ -311,7 +311,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func removeTrustedCertificate(tenantId: String, fingerprint: String) -> AnyPublisher<Data, Error> {
@@ -355,7 +355,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func proveCertificatePossession(body: C8yUploadedTrustedCertSignedVerificationCode, tenantId: String, fingerprint: String) -> AnyPublisher<C8yTrustedCertificate, Error> {
@@ -405,7 +405,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func confirmCertificate(tenantId: String, fingerprint: String) -> AnyPublisher<C8yTrustedCertificate, Error> {
@@ -445,7 +445,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - fingerprint:
 	///     Unique identifier of a trusted certificate.
 	public func generateVerificationCode(tenantId: String, fingerprint: String) -> AnyPublisher<C8yTrustedCertificate, Error> {
@@ -560,7 +560,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	
 	/// Add revoked certificates
 	/// 
-	/// > **ⓘ Note** A certificate revocation list (CRL) is a list of digital certificatesthat have been revoked by the issuing certificate authority (CA) before expiration date.In Cumulocity IoT, a CRL check can be in online or offline mode or both.
+	/// > **ⓘ Note** A certificate revocation list (CRL) is a list of digital certificatesthat have been revoked by the issuing certificate authority (CA) before expiration date.In Cumulocity, a CRL check can be in online or offline mode or both.
 	/// An endpoint to add revoked certificate serial numbers for offline CRL check via payload or file.
 	/// 
 	/// For payload, a JSON object required with list of CRL entries, for example:
@@ -641,7 +641,7 @@ public class TrustedCertificatesApi: AdaptableApi {
 	
 	/// Add revoked certificates
 	/// 
-	/// > **ⓘ Note** A certificate revocation list (CRL) is a list of digital certificatesthat have been revoked by the issuing certificate authority (CA) before expiration date.In Cumulocity IoT, a CRL check can be in online or offline mode or both.
+	/// > **ⓘ Note** A certificate revocation list (CRL) is a list of digital certificatesthat have been revoked by the issuing certificate authority (CA) before expiration date.In Cumulocity, a CRL check can be in online or offline mode or both.
 	/// An endpoint to add revoked certificate serial numbers for offline CRL check via payload or file.
 	/// 
 	/// For payload, a JSON object required with list of CRL entries, for example:

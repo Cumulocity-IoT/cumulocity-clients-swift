@@ -32,7 +32,7 @@ public class TenantApplicationsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - currentPage:
 	///     The current page of the paginated results.
 	///   - pageSize:
@@ -95,7 +95,7 @@ public class TenantApplicationsApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func subscribeApplication(body: C8ySubscribedApplicationReference, tenantId: String) -> AnyPublisher<C8yApplicationReference, Error> {
 		let requestBody = body
 		var encodedRequestBody: Data? = nil
@@ -143,7 +143,7 @@ public class TenantApplicationsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - applicationId:
 	///     Unique identifier of the application.
 	public func unsubscribeApplication(tenantId: String, applicationId: String) -> AnyPublisher<Data, Error> {

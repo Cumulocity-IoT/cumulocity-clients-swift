@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The term "agent" refers to the piece of software that connects a device with Cumulocity IoT.
+/// The term "agent" refers to the piece of software that connects a device with Cumulocity.
 public struct C8yAgent: Codable {
 
 	/// The name of the agent.

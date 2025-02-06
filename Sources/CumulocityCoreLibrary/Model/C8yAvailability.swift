@@ -8,13 +8,13 @@
 
 import Foundation
 
-/// The availability information computed by Cumulocity IoT is stored in fragments `c8y_Availability` of the device.
+/// The availability information computed by Cumulocity is stored in fragments `c8y_Availability` of the device.
 public struct C8yAvailability: Codable {
 
 	/// The current status of availability, one of `AVAILABLE`, `UNAVAILABLE`, `MAINTENANCE`.
 	public var status: C8yAvailabilityDataStatus?
 
-	/// The time when the device sent the last message to Cumulocity IoT.
+	/// The time when the device sent the last message to Cumulocity.
 	public var lastMessage: String?
 
 	enum CodingKeys: String, CodingKey {

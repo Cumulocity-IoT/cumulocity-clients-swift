@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Request a device to send a log file and view it in Cumulocity IoT's log viewer.
+/// Request a device to send a log file and view it in Cumulocity's log viewer.
 public struct C8yLogfileRequest: Codable {
 
 	/// Indicates the log file to select.
@@ -23,7 +23,7 @@ public struct C8yLogfileRequest: Codable {
 	/// Provide a text that needs to be present in the log entry.
 	public var searchText: String?
 
-	/// Upper limit of the number of lines that should be sent to Cumulocity IoT after filtering.
+	/// Upper limit of the number of lines that should be sent to Cumulocity after filtering.
 	public var maximumLines: Int?
 
 	/// A link to the log file request.

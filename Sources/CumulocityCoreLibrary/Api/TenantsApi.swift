@@ -12,7 +12,7 @@ import Combine
 /// Tenants are physically separated data spaces with a separate URL, with own users, a separate application management and no sharing of data by default. Users in a single tenant by default share the same URL and the same data space.
 /// 
 /// > Tip: Tenant ID and tenant domain
-/// The **tenant ID** is a unique identifier across all tenants in Cumulocity IoT and it follows the format t<number>, for example, t07007007. It is possible to specify the tenant ID while creating a subtenant, but the ID cannot be changed after creation. If the ID is not specified (recommended), it gets auto-generated for all tenant types.
+/// The **tenant ID** is a unique identifier across all tenants in Cumulocity and it follows the format t<number>, for example, t07007007. It is possible to specify the tenant ID while creating a subtenant, but the ID cannot be changed after creation. If the ID is not specified (recommended), it gets auto-generated for all tenant types.
 /// 
 /// The location where a tenant can be accessed is called **tenant domain**, for example, *mytenant.cumulocity.com*. It needs to be unique across all tenants and it can be changed after tenant creation.The tenant domain may contain only lowercase letters, digits and hyphens. It must start with a lowercase letter, hyphens are only allowed in the middle, and the minimum length is 2 characters. Note that the usage of underscore characters is deprecated but still possible for backward compatibility reasons.
 /// 
@@ -21,10 +21,10 @@ import Combine
 /// > **������ Important:** For support user access, the tenant ID must be used and not the tenant domain.
 /// See [Tenant > Current tenant](#operation/getCurrentTenantResource) for information on how to retrieve the tenant ID and domain of the current tenant via the API.
 /// 
-/// In the UI, the tenant ID is displayed in the user dropdown menu, see [Getting started > Get familiar with the UI > User options and settings](https://www.cumulocity.com/docs/get-familiar-with-the-ui/user-settings/) in the Cumulocity IoT user documentation.
+/// In the UI, the tenant ID is displayed in the user dropdown menu, see [Getting started > Get familiar with the UI > User options and settings](https://www.cumulocity.com/docs/get-familiar-with-the-ui/user-settings/) in the Cumulocity user documentation.
 /// 
 /// > Tip: Access rights and permissions
-/// There are two types of roles in Cumulocity IoT ��� global and inventory. Global roles are applied at the tenant level. In a Role Based Access Control (RBAC) approach you must use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles must be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.
+/// There are two types of roles in Cumulocity ��� global and inventory. Global roles are applied at the tenant level. In a Role Based Access Control (RBAC) approach you must use the inventory roles in order to have the correct level of separation. Apart from some global permissions (like "own user management") customer users will not be assigned any roles. Inventory roles must be created, or the default roles used, and then assigned to the user in combination with the assets the roles apply to. This needs to be done at least once for each customer.
 /// 
 /// In a multi-tenancy approach, as the tenant is completely separated from all other customers you do not necessarily need to be involved in setting up the access rights of the customer. If customers are given administration rights for their tenants, they can set up permissions on their own. It is not possible for customers to have any sight or knowledge of other customers.
 /// 
@@ -63,11 +63,11 @@ public class TenantsApi: AdaptableApi {
 	///     
 	///     **ⓘ Note** To improve performance, the `totalPages` statistics are cached for 10 seconds.
 	///   - company:
-	///     Company name associated with the Cumulocity IoT tenant.
+	///     Company name associated with the Cumulocity tenant.
 	///   - domain:
-	///     Domain name of the Cumulocity IoT tenant.
+	///     Domain name of the Cumulocity tenant.
 	///   - parent:
-	///     Identifier of the Cumulocity IoT tenant's parent.
+	///     Identifier of the Cumulocity tenant's parent.
 	public func getTenants(currentPage: Int? = nil, pageSize: Int? = nil, withTotalElements: Bool? = nil, withTotalPages: Bool? = nil, company: String? = nil, domain: String? = nil, parent: String? = nil) -> AnyPublisher<C8yTenantCollection, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/tenants")
@@ -208,7 +208,7 @@ public class TenantsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func getTenant(tenantId: String) -> AnyPublisher<C8yTenant, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/tenants/\(tenantId)")
@@ -251,7 +251,7 @@ public class TenantsApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func updateTenant(body: C8yTenant, tenantId: String) -> AnyPublisher<C8yTenant, Error> {
 		var requestBody = body
 		requestBody.adminName = nil
@@ -310,7 +310,7 @@ public class TenantsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func deleteTenant(tenantId: String) -> AnyPublisher<Data, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/tenants/\(tenantId)")
@@ -348,7 +348,7 @@ public class TenantsApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func getTenantTfaSettings(tenantId: String) -> AnyPublisher<C8yTenantTfaData, Error> {
 		let builder = URLRequestBuilder()
 			.set(resourcePath: "/tenant/tenants/\(tenantId)/tfa")
@@ -388,7 +388,7 @@ public class TenantsApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	public func updateTenantTfaSettings(body: C8yTenantTfaStrategy, tenantId: String) -> AnyPublisher<Data, Error> {
 		let requestBody = body
 		var encodedRequestBody: Data? = nil

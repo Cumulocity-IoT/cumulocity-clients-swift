@@ -88,12 +88,11 @@ public struct C8yNotificationSubscription: Codable {
 	
 		/// For the `mo` (managed object) context, notifications from the `alarms`, `alarmsWithChildren`, `events`, `eventsWithChildren`, `managedobjects` (Inventory), `measurements` and `operations` (Device control) APIs can be subscribed to.The `alarmsWithChildren` and `eventsWithChildren` APIs subscribe to alarms and events respectively from the managed object identified by the `source.id` field, and all of its descendant managed objects.
 		/// 
-		/// For the `tenant` context, notifications from the `alarms`, `events` and `managedobjects` (Inventory) APIs can be subscribed to.
+		/// For the `tenant` context, notifications from the `alarms`, `events`, `managedobjects` (Inventory), and `operations` APIs can be subscribed to.
 		/// 
 		/// For all contexts, the `*` (wildcard) value can be used to subscribe to notifications from all of the available APIs in that context.
 		/// 
 		/// > **ⓘ Note** The wildcard `*` cannot be used in conjunction with other values.
-		/// > **ⓘ Note** When filtering Events in the `tenant` context it is required to also specify the `typeFilter`.
 		public var apis: [String]?
 	
 		/// Used to match the `type` property of the data. This must either be a string to match one specific type exactly, or be an `or` OData expression, allowing the filter to match any one of a number of types.

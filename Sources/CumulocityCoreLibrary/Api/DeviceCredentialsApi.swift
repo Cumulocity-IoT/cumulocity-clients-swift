@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-/// API methods to create device credentials in Cumulocity IoT.
+/// API methods to create device credentials in Cumulocity.
 /// 
 /// Device credentials can be enquired by devices that do not have credentials for accessing a tenant yet.Since the device does not have credentials yet, a set of fixed credentials is used for this API.The credentials can be obtained by [contacting support](https://www.cumulocity.com/docs/additional-resources/contacting-support/).
 /// 

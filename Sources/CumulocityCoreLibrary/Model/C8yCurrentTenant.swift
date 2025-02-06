@@ -22,7 +22,7 @@ public struct C8yCurrentTenant: Codable {
 	/// URL of the tenant's domain. The domain name permits only the use of alphanumeric characters separated by dots `.`, hyphens `-` and underscores `_`.
 	public var domainName: String?
 
-	/// Unique identifier of a Cumulocity IoT tenant.
+	/// Unique identifier of a Cumulocity tenant.
 	public var name: String?
 
 	/// ID of the parent tenant.

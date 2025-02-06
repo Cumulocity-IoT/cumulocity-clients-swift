@@ -121,7 +121,7 @@ public class RolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - currentPage:
@@ -172,7 +172,7 @@ public class RolesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	public func assignGroupRole(body: C8ySubscribedRole, tenantId: String, groupId: Int) -> AnyPublisher<C8yRoleReference, Error> {
@@ -222,7 +222,7 @@ public class RolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - groupId:
 	///     Unique identifier of the user group.
 	///   - roleId:
@@ -272,7 +272,7 @@ public class RolesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func assignUserRole(body: C8ySubscribedRole, tenantId: String, userId: String) -> AnyPublisher<C8yRoleReference, Error> {
@@ -322,7 +322,7 @@ public class RolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	///   - roleId:

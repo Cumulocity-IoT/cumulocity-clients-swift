@@ -10,7 +10,7 @@ import Foundation
 
 public struct C8yExternalId: Codable {
 
-	/// The identifier used in the external system that Cumulocity IoT interfaces with.
+	/// The identifier used in the external system that Cumulocity interfaces with.
 	public var externalId: String?
 
 	/// The managed object linked to the external ID.

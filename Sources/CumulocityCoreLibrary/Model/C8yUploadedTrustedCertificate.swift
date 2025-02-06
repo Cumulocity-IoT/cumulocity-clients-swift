@@ -19,7 +19,7 @@ public struct C8yUploadedTrustedCertificate: Codable {
 	/// Name of the certificate.
 	public var name: String?
 
-	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity IoT platform.
+	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity platform.
 	public var status: C8yStatus?
 
 	enum CodingKeys: String, CodingKey {
@@ -34,7 +34,7 @@ public struct C8yUploadedTrustedCertificate: Codable {
 		self.status = status
 	}
 
-	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity IoT platform.
+	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity platform.
 	public enum C8yStatus: String, Codable {
 		case enabled = "ENABLED"
 		case disabled = "DISABLED"

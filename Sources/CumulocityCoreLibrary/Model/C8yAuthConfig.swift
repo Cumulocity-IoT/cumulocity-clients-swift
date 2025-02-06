@@ -25,7 +25,7 @@ public struct C8yAuthConfig: Codable {
 	/// SSO specific. Information for the UI about the name displayed on the external server login button.
 	public var buttonName: String?
 
-	/// SSO specific. The identifier of the Cumulocity IoT tenant on the external authorization server.
+	/// SSO specific. The identifier of the Cumulocity tenant on the external authorization server.
 	public var clientId: String?
 
 	/// The authentication configuration grant type identifier.
@@ -48,7 +48,7 @@ public struct C8yAuthConfig: Codable {
 	/// The name of the authentication provider.
 	public var providerName: String?
 
-	/// SSO specific. URL used for redirecting to the Cumulocity IoT platform. Do not set or leave it empty to allow SSO flow to be controlled by client (UI) applications.
+	/// SSO specific. URL used for redirecting to the Cumulocity platform. Do not set or leave it empty to allow SSO flow to be controlled by client (UI) applications.
 	public var redirectToPlatform: String?
 
 	public var refreshRequest: C8yRequestRepresentation?
@@ -56,10 +56,10 @@ public struct C8yAuthConfig: Codable {
 	/// A URL linking to this resource.
 	public var `self`: String?
 
-	/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://www.cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity IoT user documentation.
+	/// The session configuration properties are only available for OAI-Secure. See [Platform administration > Authentication > Basic settings > OAI Secure session configuration ](https://www.cumulocity.com/docs/authentication/basic-settings/#oai-secure-session-configuration) in the Cumulocity user documentation.
 	public var sessionConfiguration: C8yOAuthSessionConfiguration?
 
-	/// SSO specific and authorization server dependent. Describes the method of access token signature verification on the Cumulocity IoT platform.
+	/// SSO specific and authorization server dependent. Describes the method of access token signature verification on the Cumulocity platform.
 	public var signatureVerificationConfig: C8ySignatureVerificationConfig?
 
 	/// SSO specific. Template name used by the UI.
@@ -73,10 +73,10 @@ public struct C8yAuthConfig: Codable {
 	/// If set to `true`, user data and the userId are retrieved using the claims from the id_token; otherwise, they are based on the access_token.
 	public var useIdToken: Bool?
 
-	/// SSO specific. Points to the field in the obtained JWT access token that should be used as the username in the Cumulocity IoT platform.
+	/// SSO specific. Points to the field in the obtained JWT access token that should be used as the username in the Cumulocity platform.
 	public var userIdConfig: C8yUserIdConfig?
 
-	/// Indicates whether user data are managed internally by the Cumulocity IoT platform or by an external server. Note that the value is case insensitive.
+	/// Indicates whether user data are managed internally by the Cumulocity platform or by an external server. Note that the value is case insensitive.
 	public var userManagementSource: C8yUserManagementSource?
 
 	/// Information for the UI if the respective authentication form should be visible for the user.
@@ -132,7 +132,7 @@ public struct C8yAuthConfig: Codable {
 		case oauth2internal = "OAUTH2_INTERNAL"
 	}
 
-	/// Indicates whether user data are managed internally by the Cumulocity IoT platform or by an external server. Note that the value is case insensitive.
+	/// Indicates whether user data are managed internally by the Cumulocity platform or by an external server. Note that the value is case insensitive.
 	public enum C8yUserManagementSource: String, Codable {
 		case `internal` = "INTERNAL"
 		case remote = "REMOTE"
@@ -281,7 +281,7 @@ public struct C8yAuthConfig: Codable {
 		}
 	}
 
-	/// SSO specific and authorization server dependent. Describes the method of access token signature verification on the Cumulocity IoT platform.
+	/// SSO specific and authorization server dependent. Describes the method of access token signature verification on the Cumulocity platform.
 	public struct C8ySignatureVerificationConfig: Codable {
 	
 		/// AAD signature verification configuration.
@@ -405,7 +405,7 @@ public struct C8yAuthConfig: Codable {
 	}
 
 
-	/// SSO specific. Points to the field in the obtained JWT access token that should be used as the username in the Cumulocity IoT platform.
+	/// SSO specific. Points to the field in the obtained JWT access token that should be used as the username in the Cumulocity platform.
 	public struct C8yUserIdConfig: Codable {
 	
 		/// Used only when `useConstantValue` is set to `true`.
@@ -414,7 +414,7 @@ public struct C8yAuthConfig: Codable {
 		/// The name of the field containing the JWT.
 		public var jwtField: String?
 	
-		/// Not recommended. If set to `true`, all SSO users will share one account in the Cumulocity IoT platform.
+		/// Not recommended. If set to `true`, all SSO users will share one account in the Cumulocity platform.
 		public var useConstantValue: Bool?
 	
 		enum CodingKeys: String, CodingKey {
@@ -434,7 +434,7 @@ public struct C8yAuthConfig: Codable {
 		/// Indicates whether authentication is enabled or disabled.
 		public var enabled: Bool?
 	
-		/// Points to the claim of the access token from the authorization server that must be used as the username in the Cumulocity IoT platform.
+		/// Points to the claim of the access token from the authorization server that must be used as the username in the Cumulocity platform.
 		public var userOrAppIdConfig: C8yUserOrAppIdConfig?
 	
 		/// If set to `true`, the access token is validated against the authorization server by way of introspection or user info request.
@@ -466,7 +466,7 @@ public struct C8yAuthConfig: Codable {
 			case userinfo = "USERINFO"
 		}
 	
-		/// Points to the claim of the access token from the authorization server that must be used as the username in the Cumulocity IoT platform.
+		/// Points to the claim of the access token from the authorization server that must be used as the username in the Cumulocity platform.
 		public struct C8yUserOrAppIdConfig: Codable {
 		
 			/// Used only if `useConstantValue` is set to `true`.
@@ -475,7 +475,7 @@ public struct C8yAuthConfig: Codable {
 			/// The name of the field containing the JWT.
 			public var jwtField: String?
 		
-			/// Not recommended. If set to `true`, all users share a single account in the Cumulocity IoT platform.
+			/// Not recommended. If set to `true`, all users share a single account in the Cumulocity platform.
 			public var useConstantValue: Bool?
 		
 			enum CodingKeys: String, CodingKey {

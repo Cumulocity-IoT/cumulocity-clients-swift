@@ -13,10 +13,10 @@ public struct C8yManagedObjectAvailability: Codable {
 	/// Identifier of the target device.
 	public var deviceId: String?
 
-	/// The identifier used in the external system that Cumulocity IoT interfaces with.
+	/// The identifier used in the external system that Cumulocity interfaces with.
 	public var externalId: String?
 
-	/// The time when the device sent the last message to Cumulocity IoT.
+	/// The time when the device sent the last message to Cumulocity.
 	public var lastMessage: String?
 
 	/// Required interval of monitored device

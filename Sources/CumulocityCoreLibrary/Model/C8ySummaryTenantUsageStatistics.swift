@@ -70,7 +70,7 @@ public struct C8ySummaryTenantUsageStatistics: Codable {
 	/// Resources usage for each subscribed microservice application.
 	public var resources: C8yUsageStatisticsResources?
 
-	/// Database storage in use, specified in bytes. It is affected by your retention rules and by the regularly running database optimization functions in Cumulocity IoT. If the size decreases, it does not necessarily mean that data was deleted. Updated only three times a day starting at 8:57, 16:57 and 23:57.
+	/// Database storage in use, specified in bytes. It is affected by your retention rules and by the regularly running database optimization functions in Cumulocity. If the size decreases, it does not necessarily mean that data was deleted. Updated only three times a day starting at 8:57, 16:57 and 23:57.
 	public var storageSize: Int?
 
 	/// Names of the tenant subscribed applications. Updated only three times a day starting at 8:57, 16:57 and 23:57.

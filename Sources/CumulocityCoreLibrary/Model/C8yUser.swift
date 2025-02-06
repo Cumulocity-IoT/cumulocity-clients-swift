@@ -16,7 +16,7 @@ public struct C8yUser: Codable {
 	/// An object with a list of custom properties.
 	public var customProperties: C8yCustomProperties?
 
-	/// The user's display name in Cumulocity IoT.
+	/// The user's display name in Cumulocity.
 	public var displayName: String?
 
 	/// The user's email address.
@@ -63,7 +63,7 @@ public struct C8yUser: Codable {
 	/// A URL linking to this resource.
 	public var `self`: String?
 
-	/// When set to `true`, this field will cause Cumulocity IoT to send a password reset email to the email address specified.
+	/// When set to `true`, this field will cause Cumulocity to send a password reset email to the email address specified.
 	/// 
 	/// If there is no password specified when creating a new user with a POST request, this must be specified and it must be set to `true`.
 	public var sendPasswordResetEmail: Bool?

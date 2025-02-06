@@ -49,7 +49,7 @@ public struct C8yTrustedCertificate: Codable {
 	/// The certificate's serial number.
 	public var serialNumber: String?
 
-	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity IoT platform.
+	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity platform.
 	public var status: C8yStatus?
 
 	/// Name of the organization to which the certificate belongs.
@@ -80,7 +80,7 @@ public struct C8yTrustedCertificate: Codable {
 	public init() {
 	}
 
-	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity IoT platform.
+	/// Indicates if the certificate is active and can be used by the device to establish a connection to the Cumulocity platform.
 	public enum C8yStatus: String, Codable {
 		case enabled = "ENABLED"
 		case disabled = "DISABLED"

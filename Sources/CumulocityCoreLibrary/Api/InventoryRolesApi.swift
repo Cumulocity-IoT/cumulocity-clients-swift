@@ -257,7 +257,7 @@ public class InventoryRolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func getUserInventoryRoles(tenantId: String, userId: String) -> AnyPublisher<C8yInventoryAssignmentCollection, Error> {
@@ -303,7 +303,7 @@ public class InventoryRolesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	public func assignUserInventoryRole(body: C8yInventoryAssignment, tenantId: String, userId: String) -> AnyPublisher<C8yInventoryAssignment, Error> {
@@ -355,7 +355,7 @@ public class InventoryRolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	///   - id:
@@ -403,7 +403,7 @@ public class InventoryRolesApi: AdaptableApi {
 	///   - body:
 	///     
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	///   - id:
@@ -455,7 +455,7 @@ public class InventoryRolesApi: AdaptableApi {
 	/// 
 	/// - Parameters:
 	///   - tenantId:
-	///     Unique identifier of a Cumulocity IoT tenant.
+	///     Unique identifier of a Cumulocity tenant.
 	///   - userId:
 	///     Unique identifier of the a user.
 	///   - id:
